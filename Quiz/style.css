@@ -1,0 +1,202 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #1a73e8, #ff0000); /* Initial Black, Blue, Red gradient */
+    background-size: 400% 400%; /* Makes the gradient more dynamic */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    margin: 0;
+    animation: gradientAnimation 10s ease infinite; /* Animation for gradient */
+    position: relative;
+}
+
+/* Animated Gradient Effect */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    75% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Adding animated particles (using pseudo-elements) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 20%),
+                      radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 20%);
+    background-size: 10px 10px;
+    pointer-events: none;
+    animation: moveParticles 5s linear infinite;
+}
+
+/* Animating particles across the screen */
+@keyframes moveParticles {
+    0% {
+        background-position: 0 0, 5px 5px;
+    }
+    100% {
+        background-position: 500px 500px, 505px 505px;
+    }
+}
+
+/* Quiz Section */
+.quiz-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Quiz Question */
+h2.question {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Horizontal Rule Style */
+hr {
+    border: 1px solid #e1e1e1;
+    margin-bottom: 20px;
+}
+
+/* List of options */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #e1e1e1;
+}
+
+/* Styling the radio buttons */
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* Label Styling */
+label {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+label:hover {
+    color: #007BFF;
+}
+
+/* Button Styling */
+.btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#submit {
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+    background-color: #0056b3;
+}
+
+#submit:active {
+    background-color: #003f7d;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .quiz-section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2.question {
+        font-size: 20px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    #submit {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+.result {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.reload-button {
+    padding: 12px 25px;
+    background-color: #008CBA;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reload-button:hover {
+    background-color: #006F8E;
+}
